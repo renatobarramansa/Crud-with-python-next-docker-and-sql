@@ -1,4 +1,4 @@
-# Projeto CRUD com Next.js, Python e SQL
+# Projeto CRUD com Next.js,Docker, Python e SQL
 
 Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido utilizando Next.js para o frontend, Python com Flask para o backend e SQL como banco de dados. A aplicação serve como um exemplo prático de como integrar essas tecnologias para criar uma aplicação web completa e funcional.
 
