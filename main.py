@@ -9,8 +9,6 @@ def main():
 
   try:
 
-    engine = sa.create_engine(f'mssql+pymssql://{DB_USER}:{DB_PASSWORD}@{DB_SERVER}/{DB_NAME}')
-    
     conn = engine.connect()
     print("Conexão bem-sucedida!")
     conn.close()
@@ -29,7 +27,34 @@ def main():
   
   controller = UsuarioController()
     # Adicionando um novo usuário
-  controller.add_usuario('João Silva', 'joao.silva@example.com')
+  
+  while True:
+    print('Escolha uma opção')
+    print("1 - Inserir usuário")
+    print("2 - Excluir usuário")
+    print("3 - Sair")
+
+    opcao = input('Digite uma opção: ')
+
+    if opcao == '1':
+      user = input("Digite seu nome")
+      email = input("Digite seu email")
+      controller.add_usuario(user, email)
+    
+    elif opcao == '2':
+      user = input('Digite o id do usuário que será deletado:')
+      controller.delete_usuario(user)
+      print('Usuário deletado com sucesso')
+
+    elif opcao == '3':
+      print('Saindo do programa')
+      break
+    else:
+      print('Opção inválida. Por favor escolha uma opção válida')
+
+    
+
+  
 
     # Listando todos os usuários
   usuarios = controller.get_usuarios()
