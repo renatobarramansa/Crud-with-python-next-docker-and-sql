@@ -53,7 +53,19 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido u
    ```bash
    cd backend
 
-3. Instale as dependências:
+3.Crie um ambiente virtual
    ```bash
-   pip install -r requirements.txt
+   python -m venv venv
+
+
+4.Crie um ambiente virtual
+   ```bash
+   source venv/bin/activate
+
+
+   
+
+
+
+
    
