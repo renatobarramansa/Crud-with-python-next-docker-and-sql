@@ -1,3 +1,4 @@
 pymssql
+flask
 python-dotenv
 SQLAlchemy

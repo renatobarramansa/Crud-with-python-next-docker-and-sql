@@ -57,10 +57,30 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido u
    ```bash
    python -m venv venv
 
-
-4.Crie um ambiente virtual
+3.Executar o ambiente venv
    ```bash
    source venv/bin/activate
+
+
+
+4.Instalar flask
+   ```bash
+   pip install flask
+
+
+
+5.Configurar o arquivo app.py
+   ```bash
+   from flask import Flask
+   app = Flask(__name__)
+   @app.route("/")
+   def hello_world():
+      return "<p>Servidor flask funcionando</p>"
+
+7.Rodar o servidor flask
+   ```bash
+   flask --app app.py run
+
 
 
    
