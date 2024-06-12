@@ -1,37 +1,22 @@
 'use client'
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 
-const Home = () => {
-  const [usuarios, setUsuarios] = useState([]);
+import { useEffect, useState } from 'react'
+import {getUsuarios,addUsuario,updateUsuario,deleteUsuario} from '../../api'
 
-  useEffect(() => {
-    const fetchUsuarios = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/usuarios`);
-        console.log('response')
-        setUsuarios(response.data);
-      } catch (error) {
-        console.error('Erro ao buscar usuários:', error);
-      }
-    };
+export default function Home (){  
+  const[usuarios, setUsuarios] = useState([])
+  const[novoUsuario, setNovoUsuario] = useState({
+    nome:'', email:''
+  })
 
-    fetchUsuarios();
-  }, []);
+  useEffect (()=>{
+    fetchUsuarios()
+  },[])
 
-  return (
-    <div>
-      <h1>Lista de Usuários</h1>
-      <ul>
-        {usuarios.map((usuario) => (
-          <li key={usuario.id}>
-            {usuario.nome} - {usuario.email}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+  const fetchUsuarios = async ()=>{
+    const data = await getUsuarios();
+    console.log(data.nome)
+  }
 
-export default Home;
+}
 
