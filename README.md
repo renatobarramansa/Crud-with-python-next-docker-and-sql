@@ -39,6 +39,8 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido u
    ```bash
    cd frontend
 
+
+
 2. Instale as dependências:
    ```bash
    npm install
@@ -49,27 +51,30 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido u
 
 #### Backend
 
+1. Instale o as dependências do backEnd:
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+
 2. Navegue até o diretório `backend`:
    ```bash
    cd backend
 
-3.Crie um ambiente virtual
+3. Crie um ambiente virtual
    ```bash
    python -m venv venv
 
-3.Executar o ambiente venv
+3. Executar o ambiente venv
    ```bash
    source venv/bin/activate
 
 
-
-4.Instalar flask
+4. Instalar flask
    ```bash
    pip install flask
 
 
-
-5.Configurar o arquivo app.py
+5. Configurar o arquivo app.py
    ```bash
    from flask import Flask
    app = Flask(__name__)
@@ -77,12 +82,26 @@ Este projeto é um aplicativo CRUD (Create, Read, Update, Delete) desenvolvido u
    def hello_world():
       return "<p>Servidor flask funcionando</p>"
 
-7.Rodar o servidor flask
+6. Rodar o servidor flask
    ```bash
    flask --app app.py run
 
 
+##### Resolução de possiveis problemas
+1.    ```bash
+      The virtual environment was not created successfully because ensurepip is not
+      available.  On Debian/Ubuntu systems, you need to install the python3-venv
+      package using the following command.
 
+      sudo apt install python3-venv
+
+      You may need to use sudo with that command.  After installing the python3-venv
+      package, recreate your virtual environment.
+
+2. Para listar se as dependências foram instaladas corretamente
+      ```bash
+      pip list
+      
    
 
 
